@@ -2,7 +2,7 @@
 
 ## Description
 
-This is a simple microservice written in Go. It uses the [chi](https://github.com/go-chi/chi)
+This is a simple microservice written in Go. It uses the [chi](https://github.com/go-chi/chi) router.
 
 ## Usage
 
