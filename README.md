@@ -1,8 +1,10 @@
 # Go Microservice
 
-## Description
+## Built with
 
-This is a simple microservice written in Go. It uses the [chi](https://github.com/go-chi/chi) router.
+- [Go](https://golang.org/)
+- [Chi](https://github.com/go-chi/chi)
+- [Redis](https://upstash.com/)
 
 ## Usage
 
