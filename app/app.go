@@ -12,7 +12,7 @@ import (
 )
 
 type App struct {
-	Router http.Handler
+	router http.Handler
 	rdb *redis.Client
 }
 
@@ -22,9 +22,10 @@ func New() *App {
 	opt, _ := redis.ParseURL(redisURL)
 
 	app := &App{
-		Router: loadRoutes(),
 		rdb: redis.NewClient(opt),
 	}
+
+	app.loadRoutes()
 
 	return app
 }
@@ -32,7 +33,7 @@ func New() *App {
 func (a *App) Start(ctx context.Context) error {
 	server := &http.Server{
 		Addr: ":3000",
-		Handler: a.Router,
+		Handler: a.router,
 	}
 
 	err := a.rdb.Ping(ctx).Err()
